@@ -1,0 +1,41 @@
+// .app-container {
+//   @media screen and (max-width: 1023px) {
+//     position: fixed;
+//     top: 5rem;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     overflow-y: auto;
+//   }
+// }
+
+// html,
+// body {
+//   height: 100%;
+//   margin: 0;
+// }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 5rem);
+  @media screen and (max-width: 1023px) {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+  }
+}
+
+.app-container {
+  flex: 1; // ocupa el espacio disponible entre header y footer
+  box-sizing: border-box;
+}

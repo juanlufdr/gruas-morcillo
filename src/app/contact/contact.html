@@ -1,0 +1,55 @@
+<div class="contact">
+  <h1>¿Dónde estamos?</h1>
+
+  <hr />
+  <div class="contact__container">
+    <div class="contact__container__info">
+      <div class="contact__container__info-section">
+        <h2><i class="fa-solid fa-location-dot"></i> Dirección</h2>
+        <p>Calle Pozo Nuevo 5. Don Benito (Badajoz)</p>
+      </div>
+
+      <div class="contact__container__info-section">
+        <h2><i class="fas fa-phone"></i> Teléfono</h2>
+        <p>666444777 || 663221489</p>
+      </div>
+      <div class="contact__container__info-section">
+        <h2><i class="fas fa-envelope"></i> Email</h2>
+        <p>{{ "manuel_mv@hotmail.es" }}</p>
+      </div>
+    </div>
+
+    <div class="contact__container__map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1551.4264788599376!2d-5.871672806410797!3d38.950187475409436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd145b045338fbcf%3A0x6e122240644aa122!2sGr%C3%BAas%20Morcillo!5e0!3m2!1ses!2ses!4v1752180315071!5m2!1ses!2ses"
+        class="contact__container__map-iframe"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="form">
+  <h1>Formulario de contacto</h1>
+  <form class="form__inputs" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form__inputs-container">
+      <label for="name">Nombre:</label>
+      <input type="text" formControlName="name" />
+    </div>
+
+    <div class="form__inputs-container">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" />
+    </div>
+    <div class="form__inputs-container">
+      <label for="message">Mensaje:</label>
+      <textarea id="message" formControlName="message"></textarea>
+    </div>
+
+    <!-- <div class="form__inputs-container"> -->
+    <button class="form__inputs-send" type="submit">Enviar</button>
+    <!-- </div> -->
+  </form>
+</div>

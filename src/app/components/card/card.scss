@@ -1,0 +1,32 @@
+.card {
+  // max-width: 350px; /* 📌 Limita el ancho */
+  width: 100%; /* 📱 Se adapta a pantallas pequeñas */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: auto; /* Centra horizontalmente */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+  align-items: center;
+  height: 100%;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  &-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &-title {
+    text-align: center;
+  }
+
+  &-description {
+    text-align: center;
+  }
+}

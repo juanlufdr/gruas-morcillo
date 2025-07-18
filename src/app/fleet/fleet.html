@@ -1,0 +1,43 @@
+<div class="fleet">
+  <h1 class="fleet__header">Nuestra flota portavehículos</h1>
+
+  <div class="fleet__carousel">
+    <div class="fleet__carousel__main">
+      <button class="fleet__carousel__btn left" (click)="prevImage()">
+        &#10094;
+      </button>
+
+      <img
+        [src]="images[currentIndex].src"
+        [alt]="images[currentIndex].alt"
+        class="fleet__carousel__img"
+      />
+
+      <button class="fleet__carousel__btn right" (click)="nextImage()">
+        &#10095;
+      </button>
+    </div>
+
+    <div class="fleet__carousel__thumbnails">
+      <img
+        *ngFor="let img of images; let i = index"
+        [src]="img.src"
+        [alt]="img.alt"
+        [class.active]="i === currentIndex"
+        (click)="selectImage(i)"
+        class="fleet__carousel__thumbnail"
+      />
+    </div>
+  </div>
+
+  <!-- <div class="lightbox" *ngIf="selectedImage" (click)="closeLightbox()">
+    <img [src]="selectedImage" class="lightbox__img" />
+    <button
+      class="lightbox__close"
+      (click)="closeLightbox(); $event.stopPropagation()"
+    >
+      ×
+    </button>
+  </div>
+</div> -->
+</div>

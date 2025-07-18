@@ -1,0 +1,27 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem;
+
+  &__text {
+    text-align: justify;
+  }
+
+  &__img {
+    width: 90%;
+    height: 20rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

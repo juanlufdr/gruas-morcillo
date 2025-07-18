@@ -1,0 +1,95 @@
+<div class="header-desktop">
+  <!-- <div class="header-desktop__logo"> -->
+  <img
+    class="header-desktop__logo"
+    src="assets/imgs/logo.svg"
+    alt=""
+    [routerLink]="['/home']"
+  />
+  <!-- </div> -->
+  <nav class="header-desktop__menu">
+    <ul class="header-desktop__menu-list">
+      <li
+        class="header-desktop__menu-list-link"
+        [routerLink]="['/about-us']"
+        [routerLinkActive]="'header-desktop__menu-list-link-active'"
+      >
+        Sobre nosotros
+      </li>
+      <li class="header-desktop__menu-list-link">Servicios</li>
+      <li
+        class="header-desktop__menu-list-link"
+        [routerLink]="['/fleet']"
+        [routerLinkActive]="'header-desktop__menu-list-link-active'"
+      >
+        Flota
+      </li>
+      <li
+        class="header-desktop__menu-list-link"
+        [routerLink]="['/contact']"
+        [routerLinkActive]="'header-desktop__menu-list-link-active'"
+      >
+        Contacto
+      </li>
+    </ul>
+  </nav>
+  <div class="header-desktop__lang">
+    <p>ES</p>
+  </div>
+</div>
+
+<div class="header-mobile">
+  <div class="header-mobile-navbar">
+    <div class="header-mobile-navbar__menu" (click)="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div
+      class="header-mobile-navbar__logo"
+      [routerLink]="['/home']"
+      (click)="isMenuOpen = false"
+    >
+      <img
+        class="header-mobile-navbar__logo-img"
+        src="assets/imgs/logo.svg"
+        alt="Logo"
+      />
+    </div>
+
+    <div class="header-mobile-navbar__spacer"></div>
+  </div>
+</div>
+
+@if (isMenuOpen) {
+
+<nav class="menu">
+  <ul class="header-desktop__menu-list">
+    <li
+      class="header-desktop__menu-list-link"
+      [routerLink]="['/about-us']"
+      [routerLinkActive]="'header-desktop__menu-list-link-active'"
+      (click)="isMenuOpen = false"
+    >
+      Sobre nosotros
+    </li>
+    <li class="header-desktop__menu-list-link" (click)="isMenuOpen = false">
+      Servicios
+    </li>
+    <li
+      class="header-desktop__menu-list-link"
+      [routerLink]="['/fleet']"
+      [routerLinkActive]="'header-desktop__menu-list-link-active'"
+      (click)="isMenuOpen = false"
+    >
+      Flota
+    </li>
+    <li
+      class="header-desktop__menu-list-link"
+      [routerLink]="['/contact']"
+      [routerLinkActive]="'header-desktop__menu-list-link-active'"
+      (click)="isMenuOpen = false"
+    >
+      Contacto
+    </li>
+  </ul>
+</nav>
+}

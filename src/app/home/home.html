@@ -1,0 +1,30 @@
+<main class="main">
+  <article class="main__first-article">
+    <h1>Grúas para transporte de vehículos en Don Benito</h1>
+    <p>
+      Ofrecemos servicios de grúa para el transporte de todo tipo de vehículos
+      las 24 horas en Extremadura y alrededores. Solicita tu presupuesto sin
+      compromiso.
+    </p>
+    <div class="main__first-article__actions">
+      <button (click)="goToPhone()">
+        <i class="fas fa-phone"></i> Contactar por teléfono
+      </button>
+      <button (click)="goToWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+      </button>
+    </div>
+  </article>
+
+  <article class="main__services">
+    <h1 class="main__services-title">Servicios</h1>
+    <div class="main__services__cards">
+      <app-card
+        *ngFor="let service of services"
+        [title]="service.title"
+        [description]="service.description"
+        [icon]="service.icon"
+      ></app-card>
+    </div>
+  </article>
+</main>
