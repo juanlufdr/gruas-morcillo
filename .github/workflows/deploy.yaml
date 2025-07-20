@@ -1,39 +1,36 @@
-name: Deploy Angular to GitHub Pages
+name: Build & Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
-  build:
+  # Build job
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
 
-      - name: Setup Node
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
+          node-version: latest
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build app
+      - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: github-pages
-          path: dist/gm-web/browser
+      - name: Deploy to Github pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npm run ng -- deploy --repo=https://github.com/juanlufdr/gruas-morcillo.git --name="juanlufdr" --email="juanluisfragoso@gmail.com" --base-href=/gruas-morcillo/
 
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
+# 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
