@@ -1,7 +1,6 @@
 <div class="contact">
   <h1>¿Dónde estamos?</h1>
 
-  <hr />
   <div class="contact__container">
     <div class="contact__container__info">
       <div class="contact__container__info-section">
@@ -36,16 +35,82 @@
   <form class="form__inputs" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form__inputs-container">
       <label for="name">Nombre:</label>
-      <input type="text" formControlName="name" />
+      <div class="form__inputs-container-input">
+        <input type="text" formControlName="name" />
+
+        <div
+          class="form__inputs-container-error"
+          *ngIf="form.get('name')?.invalid && isSubmitted"
+        >
+          <small *ngIf="form.get('name')?.errors?.['required']">
+            <i class="fa-solid fa-circle-exclamation"></i> El nombre es
+            obligatorio.
+          </small>
+        </div>
+      </div>
     </div>
 
     <div class="form__inputs-container">
       <label for="email">Email:</label>
-      <input type="email" id="email" formControlName="email" />
+      <div class="form__inputs-container-input">
+        <input type="email" id="email" formControlName="email" />
+        <div
+          class="form__inputs-container-error"
+          *ngIf="form.get('email')?.invalid && isSubmitted"
+        >
+          <small *ngIf="form.get('email')?.errors?.['required']">
+            <i class="fa-solid fa-circle-exclamation"></i> El email es
+            obligatorio.
+          </small>
+          <small *ngIf="form.get('email')?.errors?.['email']">
+            <i class="fa-solid fa-circle-exclamation"></i> El email no es
+            válido.
+          </small>
+        </div>
+      </div>
     </div>
     <div class="form__inputs-container">
       <label for="message">Mensaje:</label>
-      <textarea id="message" formControlName="message"></textarea>
+      <div class="form__inputs-container-input">
+        <textarea id="message" formControlName="message"></textarea>
+
+        <div
+          class="form__inputs-container-error"
+          *ngIf="form.get('message')?.invalid && isSubmitted"
+        >
+          <small *ngIf="form.get('message')?.errors?.['required']">
+            <i class="fa-solid fa-circle-exclamation"></i> El mensaje es
+            obligatorio.
+          </small>
+          <small *ngIf="form.get('message')?.errors?.['minlength']">
+            <i class="fa-solid fa-circle-exclamation"></i> El mensaje debe tener
+            al menos 60 caracteres.
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="form__checkbox-container">
+      <div class="form__checkbox-container-inputs">
+        <input
+          type="checkbox"
+          class="form__checkbox-container-inputs-checkbox"
+          id="privacyPolicyAccepted"
+          formControlName="privacyPolicyAccepted"
+        />
+        <label for="privacyPolicyAccepted"
+          >He leído y acepto la
+          <a [routerLink]="['/legal-notice']">política de privacidad</a></label
+        >
+      </div>
+      <div
+        class="form__inputs-container-error"
+        *ngIf="form.get('privacyPolicyAccepted')?.invalid && isSubmitted"
+      >
+        <small *ngIf="form.get('privacyPolicyAccepted')?.errors?.['required']">
+          <i class="fa-solid fa-circle-exclamation"></i> Debes aceptar la
+          política de privacidad.
+        </small>
+      </div>
     </div>
 
     <!-- <div class="form__inputs-container"> -->

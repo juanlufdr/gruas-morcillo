@@ -18,6 +18,21 @@ export const routes: Routes = [
     loadComponent: () => import('./fleet/fleet').then((m) => m.Fleet),
   },
   {
+    path: 'legal-notice',
+    loadComponent: () =>
+      import('./legal-notice/legal-notice').then((m) => m.LegalNotice),
+  },
+  {
+    path: 'privacy-policy',
+    loadComponent: () =>
+      import('./privacy-policy/privacy-policy').then((m) => m.PrivacyPolicy),
+  },
+  {
+    path: 'cookie-policy',
+    loadComponent: () =>
+      import('./cookie-policy/cookie-policy').then((m) => m.CookiePolicy),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',

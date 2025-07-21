@@ -1,10 +1,18 @@
 <div class="footer">
-  <p class="footer__text">Todos los Derechos Reservados - 2025</p>
+  <p class="footer__text">
+    {{ "Todos los Derechos Reservados - 2025 @ Grúas Morcillo" }}
+  </p>
   <div class="footer__advices">
-    <a href="/legal" class="footer__advices__link">Aviso legal</a>
+    <a [routerLink]="['/legal-notice']" class="footer__advices__link"
+      >Aviso legal</a
+    >
     <span class="footer__advices__separator">|</span>
-    <a href="/cookies" class="footer__advices__link">Aviso legal cookies</a>
+    <a [routerLink]="['/cookie-policy']" class="footer__advices__link"
+      >Aviso legal cookies</a
+    >
     <span class="footer__advices__separator">|</span>
-    <a href="/privacy" class="footer__advices__link">Política de privacidad</a>
+    <a [routerLink]="['/privacy-policy']" class="footer__advices__link"
+      >Política de privacidad</a
+    >
   </div>
 </div>

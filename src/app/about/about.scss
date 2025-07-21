@@ -24,4 +24,19 @@
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     }
   }
+
+  &__container {
+    &__map {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      &-iframe {
+        width: 100%;
+        height: auto;
+        border: none;
+      }
+    }
+  }
 }
