@@ -1,0 +1,32 @@
+[
+  {
+    "title": "TRANSPORTE DE TODO TIPO DE VEHÍCULOS",
+    "description": "Ofrecemos servicios de grúa para todo tipo de vehículos: turismos, furgonetas, motos, coches clásicos, 4x4, caravanas, carretillas elevadoras etc.",
+    "icon": "fa-solid fa-truck"
+  },
+  {
+    "title": "SERVICIO EN LA COMUNIDAD DE EXTREMADURA",
+    "description": "Realizamos servicios de grúas particulares en toda la Comunidad de Extremadura para asistencia en carretera, emergencias, traslados programados y transporte de vehículos.",
+    "icon": "fa-solid fa-location-dot"
+  },
+  {
+    "title": "SERVICIO 24 HORAS",
+    "description": "Brindamos un servicio de grúas portavehículos las 24 horas, los 7 días de la semana para prestar auxilio en carretera o realizar traslado de vehículos, garantizando que el vehículo llegue a su destino en óptimas condiciones.",
+    "icon": "fa-regular fa-clock"
+  },
+  {
+    "title": "PROFESIONALIDAD Y RAPIDEZ",
+    "description": "Para nosotros el cliente y la calidad del servicio es lo primero. No hay esperas innecesarias. Garantizamos un traslado seguro, puntual y eficiente.",
+    "icon": "fa-solid fa-truck-fast"
+  },
+  {
+    "title": "PRESUPUESTO SIN COMPROMISO",
+    "description": "Solicita tu presupuesto sin compromiso y conoce de antemano y coste del servicio que necesita en un breve periodo de tiempo.",
+    "icon": "fa-solid fa-comment"
+  },
+  {
+    "title": "SERVICIOS PERSONALIZADOS",
+    "description": "Ofrecemos un servicio de grúa completamente personalizado, diseñado para adaptarse a las necesidades específicas de transporte de nuestros clientes.",
+    "icon": "fa-solid fa-user-gear"
+  }
+]
