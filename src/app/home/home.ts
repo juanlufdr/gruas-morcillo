@@ -38,11 +38,11 @@ export class Home implements OnInit {
   }
 
   goToPhone() {
-    window.location.href = 'tel:+34627313749';
+    window.location.href = 'tel:+34637143694';
   }
 
   goToWhatsApp() {
-    window.open('https://wa.me/+34627313749', '_blank');
+    window.open('https://wa.me/+34637143694', '_blank');
   }
 
 }
