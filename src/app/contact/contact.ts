@@ -8,6 +8,13 @@ import {
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Email } from '../services/email';
+import { MetaService } from '../services/meta';
+import {
+  buildCanonicalUrl,
+  DEFAULT_KEYWORDS,
+  OG_IMAGE_URL,
+  SITE_METADATA,
+} from '../services/seo.constants';
 
 @Component({
   selector: 'app-contact',
@@ -19,6 +26,7 @@ import { Email } from '../services/email';
 export class Contact implements OnInit {
   private readonly fb = inject(FormBuilder);
   private readonly emailService = inject(Email);
+  private readonly metaService = inject(MetaService);
   form!: FormGroup;
   isSubmitted = false;
 
@@ -27,6 +35,15 @@ export class Contact implements OnInit {
   }
 
   ngOnInit() {
+    this.metaService.updateSeo({
+      title: `${SITE_METADATA.name} | Contacto y atención 24h`,
+      description:
+        'Contacta con Grúas Morcillo para solicitar presupuestos, asistencia urgente o información sobre transporte de vehículos en Extremadura.',
+      keywords: [...DEFAULT_KEYWORDS, 'contacto grúas morcillo'],
+      url: buildCanonicalUrl('contact'),
+      image: OG_IMAGE_URL,
+    });
+
     this.form = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
