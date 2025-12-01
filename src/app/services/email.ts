@@ -6,8 +6,8 @@ import { inject, Injectable } from '@angular/core';
 })
 export class Email {
   private readonly httpClient = inject(HttpClient);
-  // private readonly apiUrl = 'https://formsubmit.co/juanluisfragoso@gmail.com';
-  private readonly apiUrl = 'https://formspree.io/f/mldlgqyy';
+  private readonly apiUrl = 'https://formsubmit.co/manuel_mv@hotmail.es';
+  // private readonly apiUrl = 'https://formspree.io/f/mldlgqyy';
 
   sendEmail(name: string, email: string, message: string) {
     const emailBody = this.buildEmailBody(name, email, message);
@@ -27,6 +27,7 @@ export class Email {
     formData.set('email', email);
     formData.set('mensaje', message);
     formData.set('_subject', 'Nuevo mensaje desde la web');
+    formData.set('_template', 'table');
 
     return formData;
   }
