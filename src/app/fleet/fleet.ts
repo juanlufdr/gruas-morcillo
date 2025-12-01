@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { MetaService } from '../services/meta';
+import {
+  buildCanonicalUrl,
+  DEFAULT_KEYWORDS,
+  OG_IMAGE_URL,
+  SITE_METADATA,
+} from '../services/seo.constants';
 
 @Component({
   selector: 'app-fleet',
@@ -8,7 +15,9 @@ import { Component } from '@angular/core';
   templateUrl: './fleet.html',
   styleUrl: './fleet.scss',
 })
-export class Fleet {
+export class Fleet implements OnInit {
+  private readonly metaService = inject(MetaService);
+
   images = [
     { src: 'assets/imgs/webp/1.webp', alt: 'Imagen 1' },
     { src: 'assets/imgs/webp/2.webp', alt: 'Imagen 2' },
@@ -28,6 +37,18 @@ export class Fleet {
   ];
 
   currentIndex = 0;
+
+  ngOnInit(): void {
+    this.metaService.updateSeo({
+      title: `${SITE_METADATA.name} | Flota de vehículos`,
+      description:
+        'Descubre la flota portavehículos y camiones grúa con los que operamos para cubrir rescates y transporte especializado en Extremadura.',
+      keywords: [...DEFAULT_KEYWORDS, 'flota grúas morcillo'],
+      url: buildCanonicalUrl('fleet'),
+      image: OG_IMAGE_URL,
+      type: 'article',
+    });
+  }
 
   selectImage(index: number) {
     this.currentIndex = index;
